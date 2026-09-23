@@ -1,0 +1,18 @@
+services:
+  backend:
+    container_name: digital_card_backend_dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      DATABASE_URL: ${DB_URL}
+      PORT: 3000
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      postgres:
+        condition: service_healthy

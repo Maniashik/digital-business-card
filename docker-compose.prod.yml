@@ -1,0 +1,16 @@
+services:
+  backend:
+    container_name: digital_card_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    environment:
+      DATABASE_URL: ${DB_URL}
+      PORT: 3000
+    ports:
+      - '3000:3000'
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy

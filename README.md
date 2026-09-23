@@ -42,7 +42,7 @@
 DB_USER=digital_card_user
 DB_PASSWORD=digital_card_password
 DB_NAME=digital_card
-DATABASE_URL=postgresql://digital_card_user:digital_card_password@postgres:5432/digital_card?schema=public
+DB_URL=postgresql://digital_card_user:digital_card_password@postgres:5432/digital_card?schema=public
 ```
 
 Для локального запуска Prisma CLI можно использовать localhost, а внутри Docker-сети — postgres.
